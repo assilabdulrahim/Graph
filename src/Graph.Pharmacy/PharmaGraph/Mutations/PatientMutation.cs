@@ -4,6 +4,7 @@
     using Graph.Pharmacy.PharmaGraph.Schemas;
     using GraphQL;
     using GraphQL.Types;
+    using System;
 
     public class PatientMutation : ObjectGraphType
     {
@@ -20,6 +21,22 @@
                         return AddPatient(newPatient);
                     }
                   );
+            Field<IntGraphType>(
+                  "AddMedicine",
+                  arguments: new QueryArguments(
+                    new QueryArgument<Medicine> { Name = "newMed" }
+                  ),
+                  resolve: context =>
+                  {
+                      var newMed = context.GetArgument<MedicineModel>("newMed");
+                      return AddMedicine(newMed);
+                  }
+                );
+        }
+
+        private int AddMedicine(MedicineModel newMed)
+        {
+            return 201;
         }
 
         private PatientModel AddPatient(PatientModel newPatient)
