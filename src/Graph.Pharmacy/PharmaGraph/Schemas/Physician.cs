@@ -7,9 +7,10 @@
     {
         public Physician()
         {
+            Name = "Physician";
             Field<StringGraphType>("name");
             Field<ListGraphType<Address>>("addresses");
-            Field<ListGraphType<Prescription>>("perscription");
+            Field<ListGraphType<Prescription>>("prescriptions");
             Field<ListGraphType<Patient>>("patients");
         }
     }

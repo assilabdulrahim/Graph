@@ -3,10 +3,11 @@
     using Graph.Pharmacy.Models;
     using GraphQL.Types;
 
-    public class Address :Pharma<AddressModel>
+    public class Address : Pharma<AddressModel>
     {
         public Address()
         {
+            Name = "Address";
             Field<StringGraphType>("city");
             Field<StringGraphType>("street1");
             Field<StringGraphType>("street2");

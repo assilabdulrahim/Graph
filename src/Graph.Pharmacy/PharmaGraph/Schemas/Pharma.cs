@@ -3,7 +3,7 @@
     using Graph.Pharmacy.Models;
     using GraphQL.Types;
 
-    public abstract class Pharma<T> : ObjectGraphType<AddressModel>, IInputObjectGraphType
+    public abstract class Pharma<T> : ObjectGraphType<T>, IInputObjectGraphType
         where T : Model
     {
     }

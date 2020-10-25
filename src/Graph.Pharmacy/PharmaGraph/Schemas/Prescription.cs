@@ -7,9 +7,10 @@
     {
         public Prescription()
         {
+            Name = "Prescription";
             Field<DateGraphType>("date");
             Field<StringGraphType>("text");
-            Field<ObjectGraphType<Physician>>("physician");
+            Field<Physician>("physician");
             Field<ListGraphType<Medicine>>("medication");
         }
     }

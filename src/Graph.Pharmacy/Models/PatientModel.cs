@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class PatientModel: Model
+    public class PatientModel : Model
     {
         public IEnumerable<AddressModel> Addresses { get; set; }
         public int Age => DateTime.Now.Year - DOB.Year;

@@ -16,8 +16,6 @@
 
   <ItemGroup>
     <Folder Include="PharmaGraph\Middleware\" />
-    <Folder Include="PharmaGraph\Mutations\" />
-    <Folder Include="PharmaGraph\Queries\" />
     <Folder Include="PharmaGraph\Validation\Rules\" />
   </ItemGroup>
 

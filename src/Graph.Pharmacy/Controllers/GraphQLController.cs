@@ -1,6 +1,8 @@
 ﻿namespace Graph.Pharmacy.Controllers
 {
     using Graph.Pharmacy.PharmaGraph;
+    using Graph.Pharmacy.PharmaGraph.Mutations;
+    using Graph.Pharmacy.PharmaGraph.Queries;
     using GraphQL;
     using GraphQL.Instrumentation;
     using GraphQL.Types;
@@ -17,16 +19,17 @@
         {
             System.DateTime start = DateTime.UtcNow;
 
-            //var inputs = query.Variables.Value;
             var schema = new Schema();
-            //if (query.QueryType == "droidQuery")
-            //{
-            //    schema.Query = new DroidQuery();
-            //}
-            //else
-            //{
-            //    schema.Query = new WeatherForcastQuery();
-            //}
+            if (query.QueryType == "patientQuery")
+            {
+                schema.Query = new PatientQuery();
+                schema.Mutation = new PatientMutation();
+            }
+            else
+            {
+                schema.Query = new PatientQuery();
+                schema.Mutation = new PatientMutation();
+            }
 
             var result = await new DocumentExecuter().ExecuteAsync(executionOptions =>
             {

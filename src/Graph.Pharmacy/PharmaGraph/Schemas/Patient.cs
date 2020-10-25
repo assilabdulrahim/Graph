@@ -7,11 +7,12 @@
     {
         public Patient()
         {
+            Name = "Patient";
             Field<StringGraphType>("name");
             Field<IntGraphType>("age");
             Field<DateGraphType>("dob");
             Field<ListGraphType<Address>>("addresses");
-            Field<ListGraphType<Prescription>>("perscription");
+            Field<ListGraphType<Prescription>>("prescriptions");
         }
     }
 }
