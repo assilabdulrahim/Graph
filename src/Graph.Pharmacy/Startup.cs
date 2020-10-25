@@ -1,5 +1,8 @@
 namespace Graph.Pharmacy
 {
+    using Graph.Pharmacy.PharmaGraph.Mutations;
+    using Graph.Pharmacy.PharmaGraph.Queries;
+    using GraphQL;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Configuration;
@@ -19,6 +22,10 @@ namespace Graph.Pharmacy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<PatientQuery>();
+            services.AddSingleton<PatientMutation>();
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+            // services.AddSingleton<LoggingMiddleware>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
