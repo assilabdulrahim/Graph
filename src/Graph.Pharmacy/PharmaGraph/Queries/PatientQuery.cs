@@ -3,6 +3,7 @@
     using Graph.Pharmacy.Models;
     using Graph.Pharmacy.PharmaGraph.Schemas;
     using GraphQL.Types;
+    using System;
 
     public class PatientQuery : ObjectGraphType
     {
@@ -24,6 +25,19 @@
                        return GetMedicine(null);
                    }
                  );
+            Field<Address>(
+                  "address",
+                  arguments: null,
+                  resolve: context =>
+                  {
+                      return GetAddress(null);
+                  }
+                );
+        }
+
+        private AddressModel GetAddress(object p)
+        {
+            return new AddressModel { City = "I dont know", State = "either" };
         }
 
         private MedicineModel GetMedicine(object p)

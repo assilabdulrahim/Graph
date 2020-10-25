@@ -1,8 +1,13 @@
-﻿namespace Graph.Pharmacy.PharmaGraph.ResponseTypes
-{
-    public class Link
+﻿
+namespace Graph.Pharmacy.PharmaGraph.ResponseTypes
+{using GraphQL.Types;
+
+    public class Link: ResponseType<LinkModel>
     {
-        public string Query { get; set; }
-        public string Name { get; set; }
+        public Link()
+        {
+            Field<StringGraphType>("name");
+            Field<StringGraphType>("query");
+        }
     }
 }
