@@ -6,7 +6,6 @@
     using Graph.Pharmacy.PharmaGraph.Schemas;
     using GraphQL;
     using GraphQL.Types;
-    using System;
     using System.Collections.Generic;
 
     public class PatientMutation : ObjectGraphType
@@ -51,10 +50,10 @@
         private AddressResponse AddAddress(AddressModel newAddress)
         {
             string query = @"{\""query\"":\""query { address{ city, state} }\"", \""QueryType\"":\""patientQuery\""}";
-            var links = new List<LinkModel>(new[] { new LinkModel { Name= "Created", Query= query } });
+            var links = new List<LinkModel>(new[] { new LinkModel { Name = "Created", Query = query } });
             return new AddressResponse
             {
-             Links= links
+                Links = links
             };
         }
 

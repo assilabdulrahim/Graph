@@ -1,8 +1,8 @@
-﻿
-namespace Graph.Pharmacy.PharmaGraph.ResponseTypes
-{using GraphQL.Types;
+﻿namespace Graph.Pharmacy.PharmaGraph.ResponseTypes
+{
+    using GraphQL.Types;
 
-    public class Link: ResponseType<LinkModel>
+    public class Link : ResponseType<LinkModel>
     {
         public Link()
         {

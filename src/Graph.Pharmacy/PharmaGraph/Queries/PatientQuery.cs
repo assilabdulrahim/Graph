@@ -3,7 +3,6 @@
     using Graph.Pharmacy.Models;
     using Graph.Pharmacy.PharmaGraph.Schemas;
     using GraphQL.Types;
-    using System;
 
     public class PatientQuery : ObjectGraphType
     {
