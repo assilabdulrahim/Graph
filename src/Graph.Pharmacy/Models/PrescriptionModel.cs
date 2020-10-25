@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class PrescriptionModel
+    public class PrescriptionModel: Model
     {
         public DateTime Date { get; set; }
         public IEnumerable<MedicineModel> Medication { get; set; }

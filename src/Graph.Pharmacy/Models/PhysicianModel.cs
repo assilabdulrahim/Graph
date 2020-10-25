@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class PhysicianModel
+    public class PhysicianModel: Model
     {
         public IEnumerable<AddressModel> Addresses { get; set; }
         public string Name { get; set; }
